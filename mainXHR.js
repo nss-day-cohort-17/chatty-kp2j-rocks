@@ -1,3 +1,5 @@
+var darkTheme = document.getElementById("darkCheck");
+
 //creating new xhr for getting the json file
 var myRequest = new XMLHttpRequest ();
 myRequest.addEventListener("load",chattyRoom);
