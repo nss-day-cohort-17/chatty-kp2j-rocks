@@ -6,32 +6,42 @@
     <title>Chatty</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
-  <body>
-    <header>
-      <div class="container">
-        <div class="container-fluid">
+  <header>
+    <div class="container">
+      <div class="container-fluid">
         <nav>
-          <a class="navbar-brand" href="#">
-            <img alt="Chatty" src="https://lh3.googleusercontent.com/-ctgiJPLQ1rY/U9g39NVCZII/AAAAAAAAADg/CwexC5itksA/w2048-h2048/Chatty%2BLogo%2BBlack%2B%2526%2BWhite.png" width="100" height="100">
+          <a class="navbar-brand">
+            <img alt="Chatty" src="https://lh3.googleusercontent.com/-ctgiJPLQ1rY/U9g39NVCZII/AAAAAAAAADg/CwexC5itksA/w2048-h2048/Chatty%2BLogo%2BBlack%2B%2526%2BWhite.png" width="150" height="150">
           </a>
+          <center>
+          <br>
+          <br>
+          <br>
           <div>
-            <form class="navbar-form navbar-left" role="Enter message">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter message">
-              </div>
-              <button type="submit" class="btn btn-default">Clear message board</button>
-            </form>
+            <input id="textBar" type="text" style="width: 50%" placeholder="Enter message">
+
+            <button type="submit" class="btn btn-default">Clear message board</button>
           </div>
-          <div>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="" id="darkCheck">Dark Theme</label>
-            <label class="checkbox-inline">
-              <input type="checkbox" value="" id="largeCheck">Large Text</label>
-          </div>
+          <label class="checkbox-inline" >
+            <input type="checkbox" id="darkCheck" value="">Dark Theme</label>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="">Large Text</label>
+            </center>
         </nav>
-        </div>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="message">
+      <label for="message">Messages:</label>
+    </div>
     <script type="text/javascript" src="mainXHR.js"></script>
   </body>
 

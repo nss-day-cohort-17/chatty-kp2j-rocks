@@ -20,7 +20,7 @@ function kbevt(event) {
     }
 }
 
-document.getElementById("formControl").addEventListener("keypress", kbevt);
+document.getElementById("textBar").addEventListener("keypress", kbevt);
 
 // function for darkTheme checkbox
 function darkToggle() {
