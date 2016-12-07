@@ -7,15 +7,17 @@ myRequest.addEventListener("load",chattyRoom);
 myRequest.open("GET","https://chatty-kp2j-rocks.firebaseio.com/.json");
 myRequest.send();
 
-
+var data ="";
 function chattyRoom (e) {
-var data = JSON.parse(e.target.responseText);
+data = JSON.parse(e.target.responseText);
+defaultMessage();
 console.log("data", data)
 }
 
  //keypress event
 function kbevt(event) {
     if(event.keyCode === 13) {
+      newMessage();
       console.log("you pressed return key")
     }
 }
@@ -35,3 +37,22 @@ function darkToggle() {
 
 // event listener for dark theme checkbox
 darkTheme.addEventListener("click", darkToggle);
+
+
+//function to create message a new message
+var mainContent ="";
+function newMessage() {
+
+  document.getElementById("message").innerHTML =mainContent;
+}
+
+
+
+//put the messages on the json file to messages area
+var mainMessage="";
+function defaultMessage() {
+  for ( var i=0 ; i < data.messages.length ; i++) {
+    mainMessage += `<p>${data.messages[i].message}<button>Delete</button></p> `
+  }
+  document.getElementById("message").innerHTML = mainMessage;
+}
