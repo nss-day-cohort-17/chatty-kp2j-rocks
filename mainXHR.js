@@ -64,11 +64,19 @@ function largeToggle() {
 
 
 //function to create message a new message
+
 var mainContent = "";
 
-function newMessage() {
 
-    document.getElementById("message").innerHTML = mainContent;
+
+
+
+function newMessage() {
+  var mainContent = document.getElementById("textBar").value;
+  console.log( document.getElementById("textBar").value)
+    mainContent = `<p>${mainContent}<button>Delete</button></p>`
+  document.getElementById("message").innerHTML +=mainContent;
+
 }
 
 
