@@ -1,3 +1,5 @@
+// variable for clearbutton
+var clearButton = document.getElementById("clearButton")
 // variable for dark theme checkbox
 var darkTheme = document.getElementById("darkCheck");
 
@@ -32,6 +34,15 @@ function darkToggle() {
     document.body.style.color = "black";
   }
 }
+
+// function to clear all messages
+function clearMessages() {
+  event.preventDefault();
+  document.getElementById("message").innerHTML = "";
+}
+
+// event listener for clear button
+clearButton.addEventListener("click", clearMessages);
 
 // event listener for dark theme checkbox
 darkTheme.addEventListener("click", darkToggle);
