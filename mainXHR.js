@@ -1,22 +1,29 @@
+//declare variables
+var mainMessage="";
+
+var mainContent ="";
+
+var data ="";
+
 // variable for clearbutton
 var clearButton = document.getElementById("clearButton");
-    // variable for dark theme checkbox
+// variable for dark theme checkbox
 var darkTheme = document.getElementById("darkCheck");
-    // variable for large text checkbox
+
+
+// variable for large text checkbox
 var makeLarge = document.getElementById('largeText');
 //creating new xhr for getting the json file
 var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", chattyRoom);
 myRequest.open("GET", "https://chatty-kp2j-rocks.firebaseio.com/.json");
 myRequest.send();
-
-var data = "";
-
+//get the input from JSON
 function chattyRoom(e) {
     data = JSON.parse(e.target.responseText);
     defaultMessage();
-    console.log("data", data);
-}
+    console.log("data", data)
+};
 
 //keypress event
 function kbevt(event) {
@@ -45,8 +52,6 @@ function clearMessages() {
     document.getElementById("message").innerHTML = "";
 }
 
-// event listener for clear button
-clearButton.addEventListener("click", clearMessages);
 
 // event listener for dark theme checkbox
 darkTheme.addEventListener("click", darkToggle);
@@ -63,13 +68,7 @@ function largeToggle() {
 }
 
 
-//function to create message a new message
-
-var mainContent = "";
-
-
-
-
+//function to create a new message
 
 function newMessage() {
   var mainContent = document.getElementById("textBar").value;
@@ -79,10 +78,7 @@ function newMessage() {
 
 }
 
-
-
 //put the messages on the json file to messages area
-var mainMessage = "";
 
 function defaultMessage() {
     for (var i = 0; i < data.messages.length; i++) {
@@ -90,3 +86,17 @@ function defaultMessage() {
     }
     document.getElementById("message").innerHTML = mainMessage;
 }
+
+// event listener for button presses anywhere on body
+document.querySelector("body").addEventListener("click", function(event) {
+  // Handle the click event on any button
+        if (event.target.tagName.toLowerCase() === "button") {
+            // if its the clear messages button clear all of the messages
+        if (event.target.id === "clearButton") {
+          clearMessages();
+        // otherwise clear just the message next to the delete button
+        } else {
+          event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+        }
+    }
+});
