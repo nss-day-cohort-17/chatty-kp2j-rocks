@@ -3,13 +3,21 @@ var clearButton = document.getElementById("clearButton")
 // variable for dark theme checkbox
 var darkTheme = document.getElementById("darkCheck");
 
-//creating new xhr for getting the json file
+
+var mainMessage="";
+
+var mainContent ="";
+
+var data ="";
+
 var myRequest = new XMLHttpRequest ();
+
+
+//creating new xhr for getting the json file
 myRequest.addEventListener("load",chattyRoom);
 myRequest.open("GET","https://chatty-kp2j-rocks.firebaseio.com/.json");
 myRequest.send();
 
-var data ="";
 function chattyRoom (e) {
 data = JSON.parse(e.target.responseText);
 defaultMessage();
