@@ -22,14 +22,12 @@ myRequest.send();
 function chattyRoom(e) {
     data = JSON.parse(e.target.responseText);
     defaultMessage();
-    console.log("data", data)
 };
 
 //keypress event
 function kbevt(event) {
     if (event.keyCode === 13) {
         newMessage();
-        console.log("you pressed return key");
     }
 }
 
@@ -72,10 +70,8 @@ function largeToggle() {
 
 function newMessage() {
   var mainContent = document.getElementById("textBar").value;
-  console.log( document.getElementById("textBar").value)
     mainContent = `<p>${mainContent}<button>Delete</button></p>`
-  document.getElementById("message").innerHTML +=mainContent;
-
+document.getElementById("message").innerHTML +=mainContent;
 }
 
 //put the messages on the json file to messages area
@@ -90,8 +86,8 @@ function defaultMessage() {
 // event listener for button presses anywhere on body
 document.querySelector("body").addEventListener("click", function(event) {
   // Handle the click event on any button
-        if (event.target.tagName.toLowerCase() === "button") {
-            // if its the clear messages button clear all of the messages
+    if (event.target.tagName.toLowerCase() === "button") {
+        // if its the clear messages button clear all of the messages
         if (event.target.id === "clearButton") {
           clearMessages();
         // otherwise clear just the message next to the delete button
