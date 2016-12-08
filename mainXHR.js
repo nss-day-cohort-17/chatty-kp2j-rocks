@@ -39,8 +39,7 @@ function checkChatBox() {
 function kbevt(event) {
     if (event.keyCode === 13) {
         newMessage();
-         checkChatBox()
-
+         checkChatBox();
 
     }
 }
@@ -86,6 +85,9 @@ function newMessage() {
   var mainContent = document.getElementById("textBar").value;
     mainContent = `<p>${mainContent}<button>Delete</button></p>`
 document.getElementById("message").innerHTML +=mainContent;
+
+document.getElementById("textBar").value= "";
+
 }
 
 //put the messages on the json file to messages area
