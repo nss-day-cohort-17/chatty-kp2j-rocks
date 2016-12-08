@@ -1,4 +1,3 @@
-//declare variables
 var mainMessage="";
 
 var mainContent ="";
@@ -24,10 +23,25 @@ function chattyRoom(e) {
     defaultMessage();
 };
 
+// to disable clear button and to call this and in all preceding functions
+function checkChatBox() {
+   if (document.getElementById("message").innerText === "") {
+
+       clearButton.disabled = true;
+   } else {
+       // console.log('else checkChatBox running', chatBox.innerHTML);
+       clearButton.disabled = false;
+
+   }
+}
+
 //keypress event
 function kbevt(event) {
     if (event.keyCode === 13) {
         newMessage();
+         checkChatBox()
+
+
     }
 }
 
@@ -90,9 +104,11 @@ document.querySelector("body").addEventListener("click", function(event) {
         // if its the clear messages button clear all of the messages
         if (event.target.id === "clearButton") {
           clearMessages();
+          checkChatBox();
         // otherwise clear just the message next to the delete button
         } else {
           event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+          checkChatBox();
         }
     }
 });
