@@ -1,9 +1,10 @@
-//declare variables
 var mainMessage="";
 
 var mainContent ="";
 
 var data ="";
+
+var jsonData =[];
 
 // variable for clearbutton
 var clearButton = document.getElementById("clearButton");
@@ -22,14 +23,27 @@ myRequest.send();
 function chattyRoom(e) {
     data = JSON.parse(e.target.responseText);
     defaultMessage();
-    console.log("data", data)
 };
+//cursor focus on input box on reload
+document.getElementById("textBar").focus();
+// to disable clear button and to call this and in all preceding functions
+function checkChatBox() {
+   if (document.getElementById("message").innerText === "") {
+
+       clearButton.disabled = true;
+   } else {
+       // console.log('else checkChatBox running', chatBox.innerHTML);
+       clearButton.disabled = false;
+
+   }
+}
 
 //keypress event
 function kbevt(event) {
     if (event.keyCode === 13) {
         newMessage();
-        console.log("you pressed return key");
+         checkChatBox();
+
     }
 }
 
@@ -72,9 +86,12 @@ function largeToggle() {
 
 function newMessage() {
   var mainContent = document.getElementById("textBar").value;
-  console.log( document.getElementById("textBar").value)
+    if (mainContent !== "") {
     mainContent = `<p>${mainContent}<button>Delete</button></p>`
-  document.getElementById("message").innerHTML +=mainContent;
+  }
+document.getElementById("message").innerHTML +=mainContent;
+
+document.getElementById("textBar").value= "";
 
 }
 
@@ -90,13 +107,15 @@ function defaultMessage() {
 // event listener for button presses anywhere on body
 document.querySelector("body").addEventListener("click", function(event) {
   // Handle the click event on any button
-        if (event.target.tagName.toLowerCase() === "button") {
-            // if its the clear messages button clear all of the messages
+    if (event.target.tagName.toLowerCase() === "button") {
+        // if its the clear messages button clear all of the messages
         if (event.target.id === "clearButton") {
           clearMessages();
+          checkChatBox();
         // otherwise clear just the message next to the delete button
         } else {
           event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+          checkChatBox();
         }
     }
 });
