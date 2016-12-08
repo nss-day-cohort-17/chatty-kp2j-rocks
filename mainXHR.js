@@ -4,6 +4,8 @@ var mainContent ="";
 
 var data ="";
 
+var jsonData =[];
+
 // variable for clearbutton
 var clearButton = document.getElementById("clearButton");
 // variable for dark theme checkbox
