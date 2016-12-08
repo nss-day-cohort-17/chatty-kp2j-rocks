@@ -13,7 +13,7 @@ var darkTheme = document.getElementById("darkCheck");
 
 // object for user names
 var users = {
-  names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"];
+  names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
 };
 
 // variable for large text checkbox
