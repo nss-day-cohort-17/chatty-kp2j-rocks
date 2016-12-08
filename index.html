@@ -4,45 +4,42 @@
     <meta charset="UTF-8">
     <title>Chatty</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel ="stylesheet" href="main.css">
   </head>
-  <body>
-      <header>
-        <div class="container">
+  <header>
+    <div class="container">
+      <div class="container-fluid">
+        <nav>
+          <a class="navbar-brand">
+            <img alt="Chatty" src="https://lh3.googleusercontent.com/-ctgiJPLQ1rY/U9g39NVCZII/AAAAAAAAADg/CwexC5itksA/w2048-h2048/Chatty%2BLogo%2BBlack%2B%2526%2BWhite.png" width="150" height="150">
+          </a>
+          <center>
+          <br>
+          <br>
+          <br>
           <div>
-            <nav>
-              <a class="navbar-brand">
-                <img alt="Chatty" src="https://lh3.googleusercontent.com/-ctgiJPLQ1rY/U9g39NVCZII/AAAAAAAAADg/CwexC5itksA/w2048-h2048/Chatty%2BLogo%2BBlack%2B%2526%2BWhite.png" width="150" height="150">
-              </a>
-
-              <center>
-              <br>
-              <br>
-              <br>
-              <div>
-                <input id="textBar" type="text" style="width: 50%" placeholder="Enter message">
-                <button type="submit" class="btn btn-default" id="clearButton">Clear message board</button>
-              </div>
-              <label class="checkbox-inline" >
-                <input type="checkbox" id="darkCheck" value="">Dark Theme</label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" id="largeText">Large Text</label>
-                  </center>
-                </nav>
+            <input id="textBar" type="text" style="width: 50%" placeholder="Enter message">
+            <button type="submit" class="btn btn-default" id="clearButton">Clear message board</button>
           </div>
-
-          </header>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div>MESSAGE:</div>
-            <div id="message">
-            </div>
-          </div>  <!-- end container -->
+          <label class="checkbox-inline" >
+            <input type="checkbox" id="darkCheck" value="">Dark Theme</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="largeText">Large Text</label>
+              </center>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>MESSAGE:</div>
+        <div id="message">
+        </div>
         <script type="text/javascript" src="mainXHR.js"></script>
       </body>
     </html>
