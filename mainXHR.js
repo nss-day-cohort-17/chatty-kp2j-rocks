@@ -9,10 +9,14 @@ var clearButton = document.getElementById("clearButton");
 // variable for dark theme checkbox
 var darkTheme = document.getElementById("darkCheck");
 
+// object for user names
+var users = {
+  names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"];
+};
 
 // variable for large text checkbox
 var makeLarge = document.getElementById('largeText');
-//creating new xhr for getting the json file
+//creating new xhr for getting the json filec
 var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", chattyRoom);
 myRequest.open("GET", "https://chatty-kp2j-rocks.firebaseio.com/.json");
