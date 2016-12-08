@@ -22,7 +22,8 @@ function chattyRoom(e) {
     data = JSON.parse(e.target.responseText);
     defaultMessage();
 };
-
+//cursor focus on input box on reload
+document.getElementById("textBar").focus();
 // to disable clear button and to call this and in all preceding functions
 function checkChatBox() {
    if (document.getElementById("message").innerText === "") {
@@ -83,7 +84,9 @@ function largeToggle() {
 
 function newMessage() {
   var mainContent = document.getElementById("textBar").value;
+    if (mainContent !== "") {
     mainContent = `<p>${mainContent}<button>Delete</button></p>`
+  }
 document.getElementById("message").innerHTML +=mainContent;
 
 document.getElementById("textBar").value= "";
