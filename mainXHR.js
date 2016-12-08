@@ -73,6 +73,7 @@ function darkToggle() {
 function clearMessages() {
     event.preventDefault();
     document.getElementById("message").innerHTML = "";
+    document.getElementById("textBar").focus();
 }
 
 
@@ -101,6 +102,7 @@ function newMessage() {
 document.getElementById("message").innerHTML +=mainContent;
 
 document.getElementById("textBar").value= "";
+document.getElementById("textBar").focus();
 
 }
 
