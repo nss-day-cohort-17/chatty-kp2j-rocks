@@ -21,18 +21,17 @@ myRequest.send();
 function chattyRoom(e) {
     data = JSON.parse(e.target.responseText);
     defaultMessage();
-    console.log("data", data)
 };
 
 // to disable clear button and to call this and in all preceding functions
 function checkChatBox() {
    if (document.getElementById("message").innerText === "") {
-       console.log('if checkChatBox running');
+
        clearButton.disabled = true;
    } else {
        // console.log('else checkChatBox running', chatBox.innerHTML);
        clearButton.disabled = false;
-       console.log('why?')
+
    }
 }
 
@@ -40,8 +39,9 @@ function checkChatBox() {
 function kbevt(event) {
     if (event.keyCode === 13) {
         newMessage();
-        checkChatBox()
-        console.log("you pressed return key");
+         checkChatBox()
+
+
     }
 }
 
@@ -84,10 +84,8 @@ function largeToggle() {
 
 function newMessage() {
   var mainContent = document.getElementById("textBar").value;
-  console.log( document.getElementById("textBar").value)
     mainContent = `<p>${mainContent}<button>Delete</button></p>`
-  document.getElementById("message").innerHTML +=mainContent;
-
+document.getElementById("message").innerHTML +=mainContent;
 }
 
 //put the messages on the json file to messages area
