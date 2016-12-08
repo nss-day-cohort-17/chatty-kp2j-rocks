@@ -57,10 +57,15 @@ document.getElementById("textBar").addEventListener("keypress", kbevt);
 function darkToggle() {
     if (darkTheme.checked) {
         document.body.style.background = "darkgray";
+        document.getElementById("nav").style.background = "darkgray";
+        document.getElementById("nav").style.color = "white";
         document.body.style.color = "white";
+        document.getElementById("textBar").style.color = "black";
     } else {
         document.body.style.background = "white";
         document.body.style.color = "black";
+        document.getElementById("nav").style.background = "white";
+        document.getElementById("nav").style.color = "black";
     }
 }
 
