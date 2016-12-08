@@ -51,27 +51,35 @@ function clearMessages() {
   document.getElementById("message").innerHTML = "";
 }
 
-// event listener for clear button
-clearButton.addEventListener("click", clearMessages);
 
 // event listener for dark theme checkbox
 darkTheme.addEventListener("click", darkToggle);
 
 
 //function to create message a new message
-var mainContent ="";
 function newMessage() {
 
   document.getElementById("message").innerHTML =mainContent;
 }
 
-
-
 //put the messages on the json file to messages area
-var mainMessage="";
 function defaultMessage() {
   for ( var i=0 ; i < data.messages.length ; i++) {
     mainMessage += `<p>${data.messages[i].message}<button>Delete</button></p> `
   }
   document.getElementById("message").innerHTML = mainMessage;
 }
+
+// event listener for button presses anywhere on body
+document.querySelector("body").addEventListener("click", function(event) {
+  // Handle the click event on any button
+  if (event.target.tagName.toLowerCase() === "button") {
+    // if its the clear messages button clear all of the messages
+    if (event.target.id === "clearButton") {
+      clearMessages();
+    // otherwise clear just the message next to the delete button
+    } else {
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+    }
+  }
+});
