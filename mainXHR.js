@@ -4,7 +4,7 @@ var mainContent ="";
 
 var data ="";
 
-var jsonData =[];
+var jsonData =["","","","",""];
 
 // variable for clearbutton
 var clearButton = document.getElementById("clearButton");
@@ -18,16 +18,16 @@ var users = {
 
 // variable for large text checkbox
 var makeLarge = document.getElementById('largeText');
-//creating new xhr for getting the json filec
-var myRequest = new XMLHttpRequest();
-myRequest.addEventListener("load", chattyRoom);
-myRequest.open("GET", "https://chatty-kp2j-rocks.firebaseio.com/.json");
-myRequest.send();
+//creating new xhr for getting the json file
+
+
+
+
 //get the input from JSON
-function chattyRoom(e) {
-    data = JSON.parse(e.target.responseText);
-    defaultMessage();
-};
+// function chattyRoom(e) {
+//     data = JSON.parse(e.target.responseText);
+//     defaultMessage();
+// };
 //cursor focus on input box on reload
 document.getElementById("textBar").focus();
 // to disable clear button and to call this and in all preceding functions
@@ -107,14 +107,18 @@ document.getElementById("textBar").focus();
 }
 
 //put the messages on the json file to messages area
+if (jsonData.length >= 5 ){
+  function defaultMessage() {
 
-function defaultMessage() {
-    for (var i = 0; i < data.messages.length; i++) {
-        mainMessage += `<p>${data.messages[i].message}<button>Delete</button></p> `;
-    }
-    document.getElementById("message").innerHTML = mainMessage;
+
+      for (var i = 0; i < jsonData.length; i++) {
+
+          mainMessage += `<p>${jsonData[i]}<button>Delete</button></p> `;
+      }
+      document.getElementById("message").innerHTML = mainMessage;
+
+  }
 }
-
 // event listener for button presses anywhere on body
 document.querySelector("body").addEventListener("click", function(event) {
   // Handle the click event on any button
